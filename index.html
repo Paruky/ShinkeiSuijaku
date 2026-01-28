@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlipCards</title>
     <style>
+        html, body {
+            overflow: hidden; /* スクロール禁止 */
+            height: 100%;    /* 高さ固定の推奨 */
+        }
         table {
             margin: 0 auto;
         }
@@ -70,7 +74,7 @@
                     td.className = "card back"
                     td.number = cards[i * 5 + j]
                     td.onclick = flip
-                    td.addEventListener('touchstart', flip)
+                    td.addEventListener('click', flip)
                     tr.appendChild(td)
                 }
                 table.appendChild(tr)
