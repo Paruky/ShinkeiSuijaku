@@ -9,6 +9,13 @@
             overflow: hidden; /* スクロール禁止 */
             height: 100%;    /* 高さ固定の推奨 */
         }
+        .pc { display: block; }
+        .sp { display: none; }
+
+        @media (max-width: 768px) {
+            .pc { display: none; }
+            .sp { display: block; }
+        }
         table {
             margin: 0 auto;
         }
@@ -127,7 +134,7 @@
     </script>
 </head>
 <h1>神経衰弱</h1>
-<p>カードを2枚めくり一致するペアを見つけるカードゲーム<br>全ペアを揃えるまでの経過時間が表示される</p>
+<p>カードを2枚めくり<br class="sp">一致するペアを見つけるカードゲーム<br>全ペアを揃えるまでの経過時間が表示される</p>
 <body onload="init()">
     <table id="table"></table>
     <h2>経過時間：<span id="time">0</span>秒</h2>
