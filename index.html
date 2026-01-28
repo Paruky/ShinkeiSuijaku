@@ -19,13 +19,17 @@
             height: 105px;
             border-radius: 8px;
             text-align: center;
-            font-size: 30px;
+            font-size: 35px;
             background-color: white;
+            font-family: 'Courier New', Courier, monospace;
         }
         td.back {
             background-image: url("Tramp-Card.PNG");
             background-repeat: no-repeat;
-            background-size: 75px 105px;
+            background-size: 76px 106px;
+        }
+        td.front {
+            background-color: #ddd;
         }
     </style>
     <script>
@@ -65,6 +69,7 @@
                     td.className = "card back"
                     td.number = cards[i * 5 + j]
                     td.onclick = flip
+                    td.addEventListener('touchstart', flip)
                     tr.appendChild(td)
                 }
                 table.appendChild(tr)
@@ -89,7 +94,7 @@
             }
 
             let num = src.number
-            src.className = "card"
+            src.className = "card front"
             src.textContent = num
 
             if (prevCard == null) {
